@@ -28,7 +28,7 @@ def hot_or_cold():
             break
 
         # Provide feedback
-        if previous_guess is None and guess != target:
+        if previous_guess is None and guess != target: # add an additional condition to check if the first guess is incorrect and only show the "Keep guessing!" message when it is the first guess
             print("Keep guessing!")
         else:
             previous_distance = abs(target - previous_guess)
