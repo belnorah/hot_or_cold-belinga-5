@@ -28,7 +28,7 @@ def hot_or_cold():
             break
 
         # Provide feedback
-        if previous_guess is None:
+        if previous_guess is None and guess != target:
             print("Keep guessing!")
         else:
             previous_distance = abs(target - previous_guess)
