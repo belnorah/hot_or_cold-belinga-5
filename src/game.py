@@ -22,6 +22,15 @@ def hot_or_cold():
         # Increment attempt counter
         attempts += 1
 
+        # Make sure the number is in the right range
+        while guess < min_range or guess > max_range:
+            attempts += 1
+            print(f"Please enter a number between {min_range} and {max_range}.")
+            try:
+                guess = int(input("Enter your guess: "))
+            except ValueError:
+                print("Please enter a valid number.")
+                continue
         # Check if the guess is correct
         if guess == target:
             print(f"Congratulations! You guessed the number in {attempts} attempts!")
