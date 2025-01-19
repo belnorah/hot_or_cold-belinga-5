@@ -41,7 +41,7 @@ The **Hot or Cold** game is a fun guessing game where players identify a hidden 
 Optional variations:
 - Set a maximum number of attempts.
 - Use different ranges for difficulty levels.
-
+- The player should have a joker that permits to retry a session after a certain number of attempts.
 ---
 
 ## Contributing
