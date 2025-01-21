@@ -1,4 +1,5 @@
 import random
+import math
 
 def hot_or_cold():
     # Initialize the game
@@ -6,7 +7,9 @@ def hot_or_cold():
     min_range = 1
     max_range = 100
     target = random.randint(min_range, max_range)
+    max_attempts = math.ceil(math.log2(max_range - min_range + 1))
     print(f"Guess the number between {min_range} and {max_range}.")
+    print(f"Theoretically, the lowest number of attempts to guess the number is {max_attempts} (optimal guessing).")
 
     previous_guess = None
     attempts = 0
@@ -31,13 +34,15 @@ def hot_or_cold():
             except ValueError:
                 print("Please enter a valid number.")
                 continue
+ 
         # Check if the guess is correct
         if guess == target:
             print(f"Congratulations! You guessed the number in {attempts} attempts!")
+            print(f"The lowest theoretical number of attempts for this range was {max_attempts}.")
             break
 
         # Provide feedback
-        if previous_guess is None and guess != target: # add an additional condition to check if the first guess is incorrect and only show the "Keep guessing!" message when it is the first guess
+        if previous_guess is None and guess != target:
             print("Keep guessing!")
         else:
             previous_distance = abs(target - previous_guess)
