@@ -34,7 +34,7 @@ def hot_or_cold():
             except ValueError:
                 print("Please enter a valid number.")
                 continue
-
+ 
         # Check if the guess is correct
         if guess == target:
             print(f"Congratulations! You guessed the number in {attempts} attempts!")
